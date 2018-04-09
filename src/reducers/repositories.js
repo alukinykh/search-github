@@ -1,34 +1,30 @@
 // @flow
 
 import typeToReducer from 'type-to-reducer'
-import { FETCH_USER_INFO_TYPE } from '../actions'
-import type { User } from '../types'
+import { FETCH_REPOSITORY_LIST } from '../actions'
+import type { Repository } from '../types'
 
 type State = {
   isLoading: boolean,
-  user: User,
+  repositories: Repository[],
   error: Object
 }
 
 const initialState: State = {
   isLoading: false,
-  user: {
-    id: null,
-    login: '',
-    avatar_url: '',
-  },
+  repositories: [],
   error: {}
 }
 
-const userInfo = typeToReducer({
-  [FETCH_USER_INFO_TYPE]: {
+const repositories = typeToReducer({
+  [FETCH_REPOSITORY_LIST]: {
     PENDING: (): State => ({
       ...initialState,
       isLoading: true
     }),
     FULFILLED: (state, action): State => ({
       ...initialState,
-      user: action.payload,
+      repositories: action.payload
     }),
     REJECTED: (state, action): State => ({
       ...initialState,
@@ -37,4 +33,4 @@ const userInfo = typeToReducer({
   }
 }, initialState)
 
-export { userInfo }
+export { repositories }

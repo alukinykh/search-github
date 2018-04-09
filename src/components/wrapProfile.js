@@ -30,7 +30,7 @@ class _Wrapper extends Component<Props> {
 
 const mapStateToProps = state => ({
   user: state.userInfo.user,
-  repositories: state.userInfo.repositories,
+  repositories: state.repositories.repositories,
   detailsMode: state.detailsMode.show
 })
 

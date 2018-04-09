@@ -68,7 +68,7 @@ export const api_user = async (username: string) => {
   } else {
     return Promise.reject({
       status: 404,
-      error: 'User not found',
+      error: 'User not found! Try search with new login.',
     })
   }
 }
