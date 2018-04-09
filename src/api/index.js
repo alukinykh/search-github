@@ -3,8 +3,6 @@
 import 'whatwg-fetch'
 import { find, propEq, map, cond, propSatisfies } from 'ramda'
 
-import type { User, Repository, Commit } from '../types'
-
 const defaultHeaders = {
   headers: {
     Accept: 'application/vnd.github.v3+json',
@@ -22,6 +20,7 @@ const onSucces = async (response) => {
 
 const onError = async (response) => {
   const result = await response.json()
+  // eslint-disable-next-line prefer-promise-reject-errors
   return Promise.reject({
     status: response.status,
     error: result,
@@ -43,6 +42,7 @@ const makeRequest = async (url, options) => {
       return Promise.reject(err)
     }
   } catch (err) {
+    // eslint-disable-next-line prefer-promise-reject-errors
     return Promise.reject({
       status: -1,
       error: 'Network error',
@@ -66,9 +66,10 @@ export const api_user = async (username: string) => {
 
     }
   } else {
+    // eslint-disable-next-line prefer-promise-reject-errors
     return Promise.reject({
       status: 404,
-      error: 'User not found! Try search with new login.',
+      error: 'User have not found! Try search with new login.',
     })
   }
 }

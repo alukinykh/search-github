@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { Card, Icon, Grid, Image } from 'semantic-ui-react'
+import { Card, Grid, Image } from 'semantic-ui-react'
 import { TableRepositories } from './repositories'
 import type { User, Repository } from '../types'
 

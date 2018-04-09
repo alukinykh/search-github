@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react'
-import { reduxForm, Field, SubmissionError } from 'redux-form'
-import {isEmpty} from 'ramda'
+import { reduxForm, Field } from 'redux-form'
+import { isEmpty } from 'ramda'
 import { connect } from 'react-redux'
 import { Grid, Button, Segment, Form } from 'semantic-ui-react'
 import type { FormProps } from 'redux-form'

@@ -1,6 +1,5 @@
 // @flow
 
-import {SubmissionError} from 'redux-form'
 import { api_repositories, api_user, api_commits_list } from '../api'
 
 export const FETCH_USER_INFO_TYPE = 'user-info/fetch'

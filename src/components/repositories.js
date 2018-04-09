@@ -31,7 +31,7 @@ class _TableRepositories extends React.Component<Props> {
             <Table.HeaderCell>Language</Table.HeaderCell>
             <Table.HeaderCell>
               Starts&nbsp;
-              <Rating icon='star' defaultRating={1} maxRating={1} />
+              <Rating icon="star" defaultRating={1} maxRating={1} />
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
